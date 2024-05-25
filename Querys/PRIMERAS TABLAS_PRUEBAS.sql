@@ -1,5 +1,6 @@
 USE GD1C2024
 
+DROP TABLE Ticket
 -- TICKET
 CREATE TABLE Ticket (
 	ticket_numero SMALLINT IDENTITY PRIMARY KEY,
@@ -14,7 +15,7 @@ CREATE TABLE Ticket (
 	ticket_subtotal_productos DECIMAL(18,2),
 	ticket_total_ticket DECIMAL(18,2)
 )
-
+DROP TABLE Empleado
 -- EMPLEADO
 CREATE TABLE Empleado (
 	legajo_empleado SMALLINT IDENTITY PRIMARY KEY,
@@ -27,7 +28,7 @@ CREATE TABLE Empleado (
 	empleado_fecha_nacimiento DATE NOT NULL
 )
 
-
+DROP TABLE Sucursal
 CREATE TABLE Sucursal (
 	id_sucursal SMALLINT PRIMARY KEY,
 	id_super SMALLINT FOREIGN KEY REFERENCES Supermercado(id_super),
@@ -35,6 +36,7 @@ CREATE TABLE Sucursal (
 	sucursal_nombre VARCHAR(50)
 )
 
+DROP TABLE Supermercado
 CREATE TABLE Supermercado (
 	id_super SMALLINT PRIMARY KEY,
 	id_domicilio SMALLINT FOREIGN KEY REFERENCES Domicilio(id_domicilio),
@@ -46,6 +48,7 @@ CREATE TABLE Supermercado (
 	super_condicion_fiscal NVARCHAR(255)
 )
 
+DROP TABLE Domicilio
 CREATE TABLE Domicilio (
 	id_domicilio SMALLINT PRIMARY KEY,
 	id_localidad SMALLINT FOREIGN KEY REFERENCES Localidad(id_localidad),
@@ -55,6 +58,7 @@ CREATE TABLE Domicilio (
 	departamento SMALLINT
 )
 
+DROP TABLE Localidad
 CREATE TABLE Localidad (
 	id_localidad SMALLINT PRIMARY KEY,
 	id_provincia SMALLINT FOREIGN KEY REFERENCES Provincia(id_provincia),
@@ -62,6 +66,7 @@ CREATE TABLE Localidad (
 	codigo_postal SMALLINT
 )
 
+DROP TABLE Provincia
 CREATE TABLE Provincia (
 	id_provincia SMALLINT PRIMARY KEY,
 	nombre_provincia NVARCHAR(50)
