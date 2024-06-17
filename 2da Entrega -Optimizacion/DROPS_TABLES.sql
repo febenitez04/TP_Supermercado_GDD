@@ -30,3 +30,4 @@ DROP TABLE IF EXISTS TipoCaja;
 
 DROP INDEX IF EXISTS idx_provincia ON Provincia 
 DROP INDEX IF EXISTS idx_localidad ON Localidad
+DROP INDEX IF EXISTS idx_cliente ON Cliente
